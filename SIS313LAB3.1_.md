@@ -2,16 +2,15 @@
 
 ## Proxy Inverso con Balanceador de Carga Avanzado y Servidores Web NGINX
 
-**ESTUDIANTE:**
-- Cruz Romero Lilian Ariel
-- Chambi Lopez Naydelin
-- Sebastian Aillon Piccolomini
+**UNIVERSITARIO:**
+- Emili (SIS)
+- Mendoza Sandoval Jery (SIS)
+- Terceros Arcani Alejandra Verónica (CICO)
+- Moreno Montero Victor Ruben (CICO)
 
-**CARRERA:** Ing de Sistemas  
 **MATERIA:** SIS 313  
-**DOCENTE:** Ing .Marcelo Quispe  
-**GRUPO:** 2  
-**FECHA:** 23/04/2026  
+**DOCENTE:** Ing. Franz Villalpando  
+**GRUPO:** 1/2  
 
 **SUCRE - BOLIVIA**  
 **2026**
@@ -22,7 +21,7 @@
 
 ## 1. Introducción
 
-El objetivo de esta práctica fue la configuración de servidores web ligeros utilizando Alpine Linux, implementando un entorno de ejecución con Node.js y un servidor NGINX actuando como Proxy Inverso. Se trabajó en la interconexión de estos servidores con un Proxy central para garantizar la salida a internet y el servicio de peticiones externas.
+El objetivo de esta práctica fue la configuración de servidores web ligeros utilizando Alpine Linux, implementando un entorno de ejecución con PHP, Node.js y Python con un servidor NGINX actuando como Proxy Inverso. Se trabajó en la interconexión de estos servidores con un Proxy central para garantizar la salida a internet y el servicio de peticiones externas.
 
 ## 2. Configuración de Red del Host (Servidor Web)
 
