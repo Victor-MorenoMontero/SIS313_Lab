@@ -25,19 +25,29 @@ El objetivo de esta práctica fue la configuración de servidores web ligeros ut
 
 ## 2. Configuración de Red del Host (Servidor Web)
 
-Para que el servidor web pudiera comunicarse, se realizaron configuraciones críticas de red a nivel de kernel y tablas de ruteo:
+Para que el servidor web pudiera comunicarse, se realizaron las siguientes configuraciones: 
 
 ### Identificación de Interfaces
 
-Se configuró la interfaz `eth0` con el direccionamiento IP dentro del segmento de red en nuestro caso la red `172.23.60.0/24`.
+Se configuró la interfaz `eth0` con el direccionamiento IP dentro del segmento de red en nuestro caso la red `192.168.100.0/24`.
 
 ### TABLA DE ASIGNACIÓN DE IPS
 
-*El documento original contiene aquí una tabla/captura de asignación de IPs, cuyo contenido no está disponible en el texto extraído del PDF.*
+
+|  Máquina virtual | Dirección IP |  Puerto | Adapatadores |
+| ------------ | ------------ | ------------ | ------------ |
+| Proxy (Ububtu) | 192.168.100.233| Fila 1, Col 3|  NAT, Puente|
+| Web Server 1| 192.168.100.122| |NAT, Puente|
+| Web Server 2| 192.168.100.123| |NAT, Puente|
+| Web Server 3| 192.168.100.232| |NAT, Puente|
+| Web Server 4| 192.168.100.228| |NAT, Puente|
+| Web Server 5| 192.168.100.229| |NAT, Puente|
+| Web Server 6| 192.168.100.234| |NAT, Puente||
+
 
 ### Enrutamiento
 
-Se estableció el Gateway apuntando a la IP del Proxy para permitir el tráfico fuera de la red local.
+Se estableció en todos los servidores el Gateway apuntando a la IP del Proxy para permitir el tráfico fuera de la red local.
 
 ### Resolución de Nombres (DNS)
 
