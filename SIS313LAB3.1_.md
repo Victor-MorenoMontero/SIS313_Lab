@@ -44,6 +44,10 @@ Se configuró la interfaz `eth0` con el direccionamiento IP dentro del segmento 
 | Web Server 5| 192.168.100.229| |NAT, Puente|
 | Web Server 6| 192.168.100.234| |NAT, Puente||
 
+![Configuración del Web Server 5](images/WebServer5_IP.jpeg)
+
+![Configuración del Web Server 6](images/WebServer6_IP.jpeg)
+
 
 ### Enrutamiento
 
