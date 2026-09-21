@@ -81,9 +81,26 @@ rc-service nginx start
 rc-service nginx status
 ```
 
+<div align="center">
+  
+![Configuración del Web Server 1](images/config_nginx.png)
+</div>
+
+### Preparación del Servidor para PHP
+
+Se instalaron los paquetes necesarios para que el servidor web Nginx pueda leer PHP como código dinámico.  Se configura el arranque automático `rc-update add php-fpm83`
+
+<div align="center">
+  
+![Configuración del Web Server 1](images/config_php.png)
+</div>
+
+
 ### Despliegue de la Aplicación
 
 Se creó un archivo `index.js` en Node.js que genera una interfaz dinámica (Glassmorphism) para mostrar el estado del servidor, su nombre y su dirección IP.
+
+
 
 ### Configuración de NGINX
 
