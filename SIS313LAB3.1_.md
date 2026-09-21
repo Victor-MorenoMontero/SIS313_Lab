@@ -3,7 +3,7 @@
 ## Proxy Inverso con Balanceador de Carga Avanzado y Servidores Web NGINX
 
 **UNIVERSITARIO:**
-- Emili (SIS)
+- Vásquez Rivera Emily (SIS)
 - Mendoza Sandoval Jery (SIS)
 - Terceros Arcani Alejandra Verónica (CICO)
 - Moreno Montero Victor Ruben (CICO)
@@ -44,11 +44,12 @@ Se configuró la interfaz `eth0` con el direccionamiento IP dentro del segmento 
 | Web Server 5| 192.168.100.229| |NAT, Puente|
 | Web Server 6| 192.168.100.234| |NAT, Puente||
 
+<div align="center">
+  
 ![Configuración del Web Server 5](images/WebServer5_IP.jpeg)
 
 ![Configuración del Web Server 6](images/WebServer6_IP.jpeg)
-
-
+</div>
 ### Enrutamiento
 
 Se estableció en todos los servidores el Gateway apuntando a la IP del Proxy para permitir el tráfico fuera de la red local.
