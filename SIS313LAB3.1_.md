@@ -102,7 +102,7 @@ Se modificó el archivo de configuración `/etc/nginx/http.d/default.conf ` para
 
 <div align="center">
   
-![Configuración del balanceador de carga](images/Proxy_balCarga.png)
+![Configuración del balanceador de carga](images/Proxy_balCarga.jpeg)
 </div>
 
 ## 5. Pruebas de Funcionamiento
@@ -114,6 +114,14 @@ Se validó la correcta operación del servidor mediante herramientas locales y e
 <div align="center">
   
 ![Configuración del Web Server 1](images/WebServer1_curl.png)
+</div>
+
+
+- Verificación de las páginas web desde el Proxy
+
+<div align="center">
+  
+![Página web del servidor 1](images/WebServer1_pagina.png)
 </div>
 -------------
 
