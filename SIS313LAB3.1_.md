@@ -45,11 +45,20 @@ Se configuró la interfaz `eth0` con el direccionamiento IP dentro del segmento 
 | Web Server 6| 192.168.100.234| |NAT, Puente||
 
 <div align="center">
+
+![Configuración del Web Server 1](images/WebServer1_IP.png)
+
+![Configuración del Web Server 2](images/WebServer2_IP.png)
+
+![Configuración del Web Server 3](images/WebServer3_IP.jpeg)
+
+![Configuración del Web Server 6](images/WebServer4_IP.jpeg)
   
 ![Configuración del Web Server 5](images/WebServer5_IP.jpeg)
 
 ![Configuración del Web Server 6](images/WebServer6_IP.jpeg)
 </div>
+
 ### Enrutamiento
 
 Se estableció en todos los servidores el Gateway apuntando a la IP del Proxy para permitir el tráfico fuera de la red local.
