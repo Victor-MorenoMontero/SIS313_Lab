@@ -74,16 +74,15 @@ Se utilizó el gestor de paquetes `apk` para preparar el entorno:
 ### Instalación de Paquetes
 
 ```bash
-apk add nginx nodejs npm curl
+apk add nginx 
 rc-update add nginx default
-rc-service nginx start
 rc-service nginx start
 rc-service nginx status
 ```
 
 <div align="center">
   
-![Configuración del Web Server 1](images/config_nginx.png)
+![Instalación de paquetes](images/config_nginx.png)
 </div>
 
 ### Preparación del Servidor para PHP
@@ -92,19 +91,12 @@ Se instalaron los paquetes necesarios para que el servidor web Nginx pueda leer 
 
 <div align="center">
   
-![Configuración del Web Server 1](images/config_php.png)
+![Instalación de paquetes de PHP](images/config_php.png)
 </div>
-
-
-### Despliegue de la Aplicación
-
-Se creó un archivo `index.js` en Node.js que genera una interfaz dinámica (Glassmorphism) para mostrar el estado del servidor, su nombre y su dirección IP.
-
-
 
 ### Configuración de NGINX
 
-Se modificó `/etc/nginx/http.d/default.conf` para redirigir el tráfico del puerto 80 al puerto 3000 (donde corre Node.js) mediante la directiva `proxy_pass`.
+Se modificó el archivo de configuración `/etc/nginx/http.d/default.conf ` para establecer el host virtual principal en el puerto 80, definiendo la ruta raíz en `/var/www/localhost/htdocs`. El servidor web Nginx procesa directamente los archivos estáticos y actúa como un proxy inverso para las peticiones que terminan en .php, redirigiendo este tráfico específico al servicio PHP-FPM (que escucha localmente en el puerto 9000) mediante el uso de la directiva fastcgi_pass. Luego se configura la página de bienvenida `nano /var/www/localhost/htdocs/index.php`
 
 ## 4. Gestión de Errores y Soluciones (Troubleshooting)
 
@@ -115,16 +107,14 @@ Esta fue la parte más técnica de la práctica, documentada mediante capturas d
 Se validó la correcta operación del servidor mediante herramientas locales y externas:
 
 - **Comando `curl localhost`:** Verificación de que el servidor responde con el código HTML diseñado.
-- **Validación de Hostname:** Cambio exitoso del nombre de host a `webserver4` y su reflejo en la interfaz web.
+  
+<div align="center">
+  
+![Configuración del Web Server 1](images/WebServer1_curl.png)
+</div>
+-------------
 
-### Errores Encontrados y Soluciones
 
-| Error Encontrado | Causa | Solución Aplicada |
-|---|---|---|
-| **502 Bad Gateway** | NGINX no encontraba el proceso de Node.js activo. | Se inició el proceso `node index.js &`. |
-| **EADDRINUSE (Port 3000)** | El puerto ya estaba ocupado por una instancia previa de Node.js. | Uso de `pkill node` para liberar el puerto y reiniciar el servicio. |
-| **404 Not Found** | NGINX intentaba buscar archivos físicos en lugar de usar el proxy inverso. | Corrección en el bloque `location /` del archivo de configuración de NGINX. |
-| **Sesión cerrada en Warp** | Uso de `ip addr flush` en una sesión remota. | Configuración directa desde la consola de la máquina virtual. |
 
 ## 6. Conclusión
 
