@@ -98,9 +98,12 @@ Se instalaron los paquetes necesarios para que el servidor web Nginx pueda leer 
 
 Se modificó el archivo de configuración `/etc/nginx/http.d/default.conf ` para establecer el host virtual principal en el puerto 80, definiendo la ruta raíz en `/var/www/localhost/htdocs`. El servidor web Nginx procesa directamente los archivos estáticos y actúa como un proxy inverso para las peticiones que terminan en .php, redirigiendo este tráfico específico al servicio PHP-FPM (que escucha localmente en el puerto 9000) mediante el uso de la directiva fastcgi_pass. Luego se configura la página de bienvenida `nano /var/www/localhost/htdocs/index.php`
 
-## 4. Gestión de Errores y Soluciones (Troubleshooting)
+### Connfiguración del Balanceador de carga
 
-Esta fue la parte más técnica de la práctica, documentada mediante capturas de pantalla.
+<div align="center">
+  
+![Configuración del balanceador de carga](images/Proxy_balCarga.png)
+</div>
 
 ## 5. Pruebas de Funcionamiento
 
