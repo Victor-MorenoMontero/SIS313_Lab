@@ -121,8 +121,9 @@ Se validó la correcta operación del servidor mediante herramientas locales y e
 
 <div align="center">
   
-![Página web del servidor 1](images/WebServer1_pagina.png)
+![Página web del servidor 1](images/WebServer1_pweb.jpeg)
 
+![Página web del servidor 1](images/WebServer6_pweb.jpeg)
 
 </div>
 
