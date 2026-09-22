@@ -122,15 +122,16 @@ Se validó la correcta operación del servidor mediante herramientas locales y e
 <div align="center">
   
 ![Página web del servidor 1](images/WebServer1_pagina.png)
+
+
 </div>
--------------
 
 
 
 ## 6. Conclusión
 
-La práctica permitió comprender la importancia del flujo de red entre un Proxy y un Servidor Web. El uso de Alpine Linux demostró ser eficiente para entornos de servidores web, mientras que la implementación de NGINX como Proxy Inverso proporcionó una capa de abstracción necesaria para servir aplicaciones modernas de Node.js.
+La práctica permitió comprender la importancia del flujo de red entre un Proxy y 6 Servidores Web. El uso de Alpine Linux demostró ser eficiente para entornos de servidores web, mientras que la implementación de NGINX como Proxy Inverso proporcionó una capa de abstracción necesaria para servir aplicaciones modernas de Node.js.
 
-En la práctica: Nginx se situó "al frente" de Node.js. El cliente (tú con el comando `curl`) le pide cosas a Nginx en el puerto 80, y Nginx, de forma invisible, le pide la información a Node.js en el puerto 3000. Esto protege la aplicación de Node.js y permite gestionar mejor el tráfico.
+En la práctica: Nginx se situó "al frente" de Node.js. El cliente, con el comando `curl` le pide cosas a Nginx en el puerto 80, y Nginx, de forma invisible, le pide la información a Node.js en el puerto 3000. Esto protege la aplicación de Node.js y permite gestionar mejor el tráfico.
 
 El Proxy (Ubuntu) puede configurarse para que, cuando lleguen muchas visitas, reparta el trabajo: una petición para `webserver3` y la siguiente para `webserver4`.
