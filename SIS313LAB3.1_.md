@@ -23,6 +23,11 @@
 
 El objetivo de esta práctica fue la configuración de servidores web ligeros utilizando Alpine Linux, implementando un entorno de ejecución con PHP, Node.js y Python con un servidor NGINX actuando como Proxy Inverso. Se trabajó en la interconexión de estos servidores con un Proxy central para garantizar la salida a internet y el servicio de peticiones externas.
 
+<div align="center">
+  
+![Diseño topológico del laboratorio 3.1](images/Topologia.jpeg)
+</div>
+
 ## 2. Configuración de Red del Host (Servidor Web)
 
 Para que el servidor web pudiera comunicarse, se realizaron las siguientes configuraciones: 
