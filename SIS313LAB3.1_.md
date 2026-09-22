@@ -34,17 +34,19 @@ Se configuró la interfaz `eth0` con el direccionamiento IP dentro del segmento 
 ### TABLA DE ASIGNACIÓN DE IPS
 
 
-|  Máquina virtual | Dirección IP |  Puerto | Adapatadores |
-| ------------ | ------------ | ------------ | ------------ |
-| Proxy (Ububtu) | 192.168.100.233| Fila 1, Col 3|  NAT, Puente|
-| Web Server 1| 192.168.100.122| |NAT, Puente|
-| Web Server 2| 192.168.100.123| |NAT, Puente|
-| Web Server 3| 192.168.100.232| |NAT, Puente|
-| Web Server 4| 192.168.100.228| |NAT, Puente|
-| Web Server 5| 192.168.100.229| |NAT, Puente|
-| Web Server 6| 192.168.100.234| |NAT, Puente||
-
 <div align="center">
+
+
+|  Máquina virtual | Dirección IP | Adapatadores |
+| ------------ | ------------ | ------------ |
+| Proxy (Ububtu) | 192.168.100.233| NAT, Puente|
+| Web Server 1| 192.168.100.122| NAT, Puente|
+| Web Server 2| 192.168.100.123| NAT, Puente|
+| Web Server 3| 192.168.100.232| NAT, Puente|
+| Web Server 4| 192.168.100.228| NAT, Puente|
+| Web Server 5| 192.168.100.229| NAT, Puente|
+| Web Server 6| 192.168.100.234| NAT, Puente||
+
 
 ![Configuración del Web Server 1](images/WebServer1_IP.png)
 
