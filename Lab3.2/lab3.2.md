@@ -253,8 +253,8 @@ Se reinició UFW para cargar los cambios:
 sudo ufw reload
 ```
 
-> ** Captura de Pantalla sugerida:** Muestra del estado de UFW ejecutando `sudo ufw status status verbose` o `sudo ufw status numbered`.  
-> ![Captura UFW Status]( path/to/image_ufw_status.png )
+ 
+> ![Captura UFW Status](images/ubuntu_verbose.png )
 
 ---
 
