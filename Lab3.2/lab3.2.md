@@ -115,8 +115,7 @@ Mediante el uso de herramientas como Netplan, `8021q` y **UFW (Uncomplicated Fir
    sudo sysctl -p
    ```
 
-> ** Captura de Pantalla sugerida:** Muestra de la salida del comando `ip a` en el router verificando el estado UP de las subinterfaces `vlan10`, `vlan20`, `vlan30` y `vlan40`.  
-> ![Captura Router Interfaces]( path/to/image_router_ip.png )
+ ![Router Interfaces](images/ubuntu_config.png)
 
 ---
 
@@ -197,7 +196,7 @@ iface eth0 inet manual
 ```
 
 > ** Captura de Pantalla sugerida:** Comprobación de conectividad básica (`ping 192.168.x.1`) desde una de las máquinas cliente hacia su correspondiente gateway.  
-> ![Captura Ping Client Gateway]( path/to/image_client_ping.png )
+> ![Captura Ping Client Gateway](images/PCventas_ping.png )
 
 ---
 
