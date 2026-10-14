@@ -5,11 +5,11 @@
 | | |
 | - | - |
 | **Asignatura** | Infraestructura, Plataformas Tecnológicas y Redes (SIS313) |
-| **Docente** | Ing. Marcelo Quispe Ortega |
+| **Docente** | Ing. Franz Villalpando   |
 | **Semestre** | 2/2026 |
-| **Estudiante(s)** | _(Nombre completo)_ |
-| **Grupo / N°** | _(N)_ |
-| **Fecha** | _(DD/MM/2026)_ |
+| **Estudiante(s)** | Moreno Montero Victor Ruben |
+| **Grupo / N°** | 2 |
+| **Fecha** | 14/10/26 |
 
 > **Cómo usar este informe:** cada recuadro `📸 CAPTURA` indica qué imagen debe insertarse. Guarda tus capturas en una carpeta `img/` junto a este archivo y reemplaza la ruta de ejemplo (`img/xx.png`) por el nombre real de tu archivo.
 
