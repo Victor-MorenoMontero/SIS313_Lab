@@ -55,7 +55,7 @@ La guía propone la siguiente distribución:
 
 La máquina DNS utiliza dos adaptadores: NAT para acceso a Internet y una interfaz conectada a la red interna. Las máquinas Web y Client se conectan a esa red interna.
 
-**[INSERTAR IMAGEN 1 AQUÍ: Diagrama de la topología o captura de VirtualBox donde se aprecien las tres VMs y sus adaptadores de red.]**
+![Diagrama de la topología o captura de VirtualBox donde se aprecien las tres VMs y sus adaptadores de red.](images/Topologia.png)
 
 *Figura 1. Topología virtual y conexión de las máquinas del laboratorio.*
 
@@ -285,15 +285,15 @@ curl http://www.lab42.local
 
 La comprobación debía confirmar que `www.lab42.local` resolviera a `192.168.10.3`, que el alias `web.lab42.local` apuntara al nombre web y que `curl` devolviera el HTML de la página.
 
-![Captura de `dig @192.168.10.2 www.lab42.local` donde se vea la respuesta y la dirección IP.](CLIENT_dig.png)
+![Captura de `dig @192.168.10.2 www.lab42.local` donde se vea la respuesta y la dirección IP.](images/CLIENT_dig.png)
 
 *Figura 9. Resolución directa del nombre del servidor web.*
 
-![Captura de `dig @192.168.10.2 web.lab42.local` o de `nslookup` donde se aprecie el alias CNAME.](CLIENT_digA.png)
+![Captura de `dig @192.168.10.2 web.lab42.local` o de `nslookup` donde se aprecie el alias CNAME.](images/CLIENT_digA.png)
 
 *Figura 10. Comprobación del alias DNS.*
 
-!![Captura de `curl http://www.lab42.local` mostrando el HTML de bienvenida.](Nav.png.png)
+!![Captura de `curl http://www.lab42.local` mostrando el HTML de bienvenida.](images/Nav.png.png)
 
 *Figura 11. Acceso al contenido web desde el cliente.*
 
