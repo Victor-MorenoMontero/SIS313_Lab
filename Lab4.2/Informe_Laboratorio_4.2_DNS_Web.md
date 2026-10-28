@@ -6,10 +6,10 @@
 
 - **Universidad:** Universidad San Francisco Xavier de Chuquisaca
 - **Asignatura:** Infraestructura, Plataformas Tecnológicas y Redes (SIS313)
-- **Docente:** Ing. Marcelo Quispe Ortega
+- **Docente:** Ing. Franz Villalpandp
 - **Semestre:** 2/2026
-- **Estudiante(s):** [Nombre completo]
-- **Fecha de realización:** [Fecha]
+- **Estudiante(s):** Moreno Montero Victor Ruben
+- **Fecha de realización:** Miercoles, 28 de octubre
 
 ## 1. Introducción
 
