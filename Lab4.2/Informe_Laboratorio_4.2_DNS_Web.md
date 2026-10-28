@@ -126,7 +126,7 @@ sudo apt install iptables-persistent
 sudo netfilter-persistent save
 ```
 
-**[INSERTAR IMAGEN 4 AQUÍ: Captura de `sysctl -p` mostrando el reenvío IPv4 activo y/o de `iptables -t nat -L -n -v` mostrando la regla NAT.]**
+![Captura de `sysctl -p` mostrando el reenvío IPv4 activo y/o de `iptables -t nat -L -n -v` mostrando la regla NAT.](images/DNS_reenvioActivo.png)
 
 *Figura 4. Habilitación del reenvío de paquetes y configuración NAT.*
 
@@ -201,11 +201,11 @@ sudo netstat -tulnp | grep named
 
 Si `netstat` no está instalado, se puede usar `sudo ss -tulnp | grep ':53'` para revisar los sockets que escuchan en el puerto 53.
 
-**[INSERTAR IMAGEN 5 AQUÍ: Captura de `named-checkzone lab42.local /etc/bind/db.lab42.local` con el resultado `OK`.]**
+![Captura de `named-checkzone lab42.local /etc/bind/db.lab42.local` con el resultado `OK`.](images/DNS_valBIND9.png)
 
 *Figura 5. Validación de la zona directa de BIND9.*
 
-**[INSERTAR IMAGEN 6 AQUÍ: Captura de `systemctl status bind9` mostrando el estado real del servicio.]**
+![Captura de `systemctl status bind9` mostrando el estado real del servicio.](images/DNS_statBIND9.png)
 
 *Figura 6. Estado del servicio BIND9.*
 
@@ -264,11 +264,11 @@ sudo systemctl restart nginx
 sudo systemctl status nginx
 ```
 
-**[INSERTAR IMAGEN 7 AQUÍ: Captura de `nginx -t` mostrando que la sintaxis es correcta.]**
+![Captura de `nginx -t` mostrando que la sintaxis es correcta.](images/WEB_valNGINX.png)
 
 *Figura 7. Validación de la configuración de Nginx.*
 
-**[INSERTAR IMAGEN 8 AQUÍ: Captura del navegador o de `curl` mostrando la página de bienvenida de `www.lab42.local`.]**
+![Captura del navegador o de `curl` mostrando la página de bienvenida de `www.lab42.local`.](images/CLIENT_curl.png)
 
 *Figura 8. Página web publicada desde la VM Web.*
 
@@ -285,15 +285,15 @@ curl http://www.lab42.local
 
 La comprobación debía confirmar que `www.lab42.local` resolviera a `192.168.10.3`, que el alias `web.lab42.local` apuntara al nombre web y que `curl` devolviera el HTML de la página.
 
-**[INSERTAR IMAGEN 9 AQUÍ: Captura de `dig @192.168.10.2 www.lab42.local` donde se vea la respuesta y la dirección IP.]**
+![Captura de `dig @192.168.10.2 www.lab42.local` donde se vea la respuesta y la dirección IP.](CLIENT_dig.png)
 
 *Figura 9. Resolución directa del nombre del servidor web.*
 
-**[INSERTAR IMAGEN 10 AQUÍ: Captura de `dig @192.168.10.2 web.lab42.local` o de `nslookup` donde se aprecie el alias CNAME.]**
+![Captura de `dig @192.168.10.2 web.lab42.local` o de `nslookup` donde se aprecie el alias CNAME.](CLIENT_digA.png)
 
 *Figura 10. Comprobación del alias DNS.*
 
-**[INSERTAR IMAGEN 11 AQUÍ: Captura de `curl http://www.lab42.local` mostrando el HTML de bienvenida.]**
+!![Captura de `curl http://www.lab42.local` mostrando el HTML de bienvenida.](Nav.png.png)
 
 *Figura 11. Acceso al contenido web desde el cliente.*
 
@@ -313,159 +313,8 @@ Ejemplo de entradas:
 
 Si se configuró el reenvío del puerto 8080 del anfitrión al puerto 80 de la VM Web, se puede probar `http://127.0.0.1:8080`. Esta prueba comprueba el acceso web a través del reenvío; por sí sola no demuestra que el anfitrión esté consultando el servidor BIND9.
 
-**[INSERTAR IMAGEN 12 AQUÍ: Captura del navegador del anfitrión mostrando el sitio por el puerto 8080, si se configuró el reenvío.]**
+![INSERTAR IMAGEN 12 AQUÍ: Captura del navegador del anfitrión mostrando el sitio por el puerto 8080, si se configuró el reenvío.](Nav.png)
 
 *Figura 12. Acceso al servidor web desde el equipo anfitrión.*
 
-## 5. Desarrollo de la práctica grupal
 
-> Completa esta sección solo con las tareas realizadas por tu grupo. Cambia el dominio y las IP de ejemplo por los valores realmente asignados en el aula.
-
-### 5.1. Topología y asignación de roles
-
-La práctica grupal contempla dos integrantes: uno se encarga del servidor DNS con BIND9 y otro del servidor web con Nginx. Las máquinas virtuales se conectan mediante el modo de red **Puente (Bridge)**, con direcciones IP disponibles en la red del laboratorio.
-
-| Rol | Responsabilidad |
-|---|---|
-| Integrante 1: DNS | Configurar BIND9, zona directa, zona inversa y pruebas de resolución. |
-| Integrante 2: Web | Configurar Nginx, crear el sitio HTML y asociarlo al dominio del grupo. |
-
-- **Dominio elegido:** [Dominio único del grupo]
-- **IP del servidor DNS:** [IP real]
-- **IP del servidor web:** [IP real]
-- **Integrantes:** [Nombres completos]
-
-**[INSERTAR IMAGEN 13 AQUÍ: Captura de la configuración de red en modo Puente o diagrama de las VMs del grupo con sus IP reales.]**
-
-*Figura 13. Topología de la práctica grupal.*
-
-### 5.2. Configuración de la zona directa
-
-Se configuró una zona directa para el dominio del grupo, con registros SOA, NS, A y CNAME. La guía presenta como ejemplo `los-pepes.red`; se debe usar el dominio propio del grupo y sustituir las direcciones de ejemplo por las direcciones reales.
-
-Comandos de validación:
-
-```bash
-sudo named-checkconf
-sudo named-checkzone DOMINIO_DEL_GRUPO /etc/bind/db.DOMINIO_DEL_GRUPO
-sudo systemctl restart bind9
-```
-
-**[INSERTAR IMAGEN 14 AQUÍ: Captura del archivo de zona directa y/o del resultado satisfactorio de `named-checkzone`, con el dominio real del grupo.]**
-
-*Figura 14. Configuración y validación de la zona directa grupal.*
-
-### 5.3. Configuración de la zona inversa
-
-Para la práctica grupal, la guía solicita crear una zona inversa correspondiente al segmento asignado. Como ejemplo para `192.168.5.0/24`, se utiliza la zona `5.168.192.in-addr.arpa` y registros PTR que relacionan los últimos octetos con los nombres DNS.
-
-Ejemplo de validación para el rango de muestra:
-
-```bash
-sudo named-checkzone 5.168.192.in-addr.arpa /etc/bind/db.192.168.5
-```
-
-El nombre de la zona y la ruta del archivo deben adaptarse a la red realmente asignada.
-
-**[INSERTAR IMAGEN 15 AQUÍ: Captura del archivo de zona inversa y del resultado `OK` de `named-checkzone`.]**
-
-*Figura 15. Configuración y validación de la zona inversa.*
-
-### 5.4. Configuración de Nginx y página del grupo
-
-El servidor web debe publicar una página HTML estática que incluya, como mínimo, el nombre del grupo, los integrantes y un mensaje o imagen de bienvenida. El bloque `server` de Nginx debe tener el dominio del grupo en `server_name` y la ruta correcta del sitio en `root`.
-
-**[INSERTAR IMAGEN 16 AQUÍ: Captura del archivo HTML o del Virtual Host de Nginx del grupo.]**
-
-*Figura 16. Página HTML y configuración del servidor web grupal.*
-
-### 5.5. Pruebas desde las PCs anfitrionas
-
-Con las PCs configuradas para consultar la IP del servidor DNS del grupo, se realizaron las pruebas indicadas en la guía:
-
-```bash
-nslookup www.DOMINIO_DEL_GRUPO
-dig www.DOMINIO_DEL_GRUPO
-nslookup IP_DEL_SERVIDOR_WEB
-dig -x IP_DEL_SERVIDOR_WEB
-```
-
-Finalmente, se abrió en el navegador:
-
-```text
-http://www.DOMINIO_DEL_GRUPO
-```
-
-Las pruebas deben mostrar la resolución directa del nombre web, la resolución inversa a través de PTR y la página HTML servida por Nginx.
-
-**[INSERTAR IMAGEN 17 AQUÍ: Captura de `nslookup` o `dig` para la resolución directa desde una PC anfitriona.]**
-
-*Figura 17. Resolución directa desde la red del laboratorio.*
-
-**[INSERTAR IMAGEN 18 AQUÍ: Captura de `dig -x IP_DEL_SERVIDOR_WEB` o `nslookup IP_DEL_SERVIDOR_WEB` mostrando el nombre devuelto por la zona inversa.]**
-
-*Figura 18. Resolución inversa del servidor web.*
-
-**[INSERTAR IMAGEN 19 AQUÍ: Captura del navegador de una PC anfitriona mostrando el sitio web del grupo por su dominio.]**
-
-*Figura 19. Acceso al sitio web grupal mediante el dominio DNS.*
-
-## 6. Resultados
-
-Completa esta tabla a partir de las salidas reales obtenidas. No marques una prueba como satisfactoria si no se ejecutó o si el resultado no coincide.
-
-| Prueba | Resultado observado | Estado |
-|---|---|---|
-| IP estáticas en las VMs individuales | [Anotar IP comprobadas] | [Correcto/Pendiente] |
-| `named-checkconf` | [Salida real] | [Correcto/Pendiente] |
-| `named-checkzone` de la zona directa individual | [Salida real] | [Correcto/Pendiente] |
-| Estado de BIND9 | [Salida real] | [Correcto/Pendiente] |
-| `nginx -t` | [Salida real] | [Correcto/Pendiente] |
-| Resolución de `www.lab42.local` | [IP devuelta] | [Correcto/Pendiente] |
-| Resolución del alias `web.lab42.local` | [Salida real] | [Correcto/Pendiente] |
-| Acceso web desde la VM Client | [Respuesta real] | [Correcto/Pendiente] |
-| Zona directa grupal | [Salida real] | [Correcto/Pendiente] |
-| Zona inversa grupal | [Nombre devuelto] | [Correcto/Pendiente] |
-| Acceso desde PC anfitriona | [URL y resultado] | [Correcto/Pendiente] |
-
-## 7. Problemas encontrados y soluciones
-
-Describe aquí únicamente los inconvenientes que realmente ocurrieron durante la práctica. Para cada uno, registra el síntoma, la causa identificada y la solución aplicada.
-
-| Problema observado | Causa identificada | Solución aplicada |
-|---|---|---|
-| [Ej. el nombre DNS no resolvía] | [Causa comprobada] | [Acción aplicada] |
-| [Ej. Nginx no mostraba la página] | [Causa comprobada] | [Acción aplicada] |
-
-Comandos útiles de diagnóstico que pueden emplearse según el problema:
-
-```bash
-ip address
-ip route
-sudo named-checkconf
-sudo named-checkzone lab42.local /etc/bind/db.lab42.local
-sudo systemctl status bind9
-sudo nginx -t
-sudo systemctl status nginx
-```
-
-## 8. Conclusiones
-
-[Redacta las conclusiones a partir de los resultados comprobados. Indica si se logró configurar BIND9, si la zona DNS resolvió los nombres y alias, si Nginx publicó el sitio y si las pruebas grupales de resolución inversa y acceso desde las PCs anfitrionas funcionaron.]
-
-## 9. Recomendaciones
-
-- Verificar los nombres reales de las interfaces de red antes de editar Netplan.
-- Revisar la sintaxis de BIND9 y Nginx antes de reiniciar los servicios.
-- Confirmar que las IP configuradas coincidan con los registros DNS.
-- Comprobar que los clientes consulten el servidor DNS correcto.
-- En la práctica grupal, coordinar el dominio y las IP para evitar conflictos dentro del aula.
-- Capturar las pruebas con el comando y su salida legibles, evitando recortar el dato que demuestra el resultado.
-
-## 10. Anexo de evidencias
-
-Antes de entregar el informe, comprueba que las capturas estén insertadas y numeradas en el lugar indicado. Como mínimo, incluye evidencias de la configuración de red, validación de BIND9, validación de Nginx, resolución DNS, acceso web y, en la práctica grupal, resolución inversa y acceso desde una PC anfitriona.
-
----
-
-**Fin del informe.**
