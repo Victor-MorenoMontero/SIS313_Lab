@@ -293,7 +293,7 @@ La comprobación debía confirmar que `www.lab42.local` resolviera a `192.168.10
 
 *Figura 10. Comprobación del alias DNS.*
 
-!![Captura de `curl http://www.lab42.local` mostrando el HTML de bienvenida.](images/Nav.png.png)
+!![Captura de `curl http://www.lab42.local` mostrando el HTML de bienvenida.](images/Nav.png)
 
 *Figura 11. Acceso al contenido web desde el cliente.*
 
@@ -313,7 +313,7 @@ Ejemplo de entradas:
 
 Si se configuró el reenvío del puerto 8080 del anfitrión al puerto 80 de la VM Web, se puede probar `http://127.0.0.1:8080`. Esta prueba comprueba el acceso web a través del reenvío; por sí sola no demuestra que el anfitrión esté consultando el servidor BIND9.
 
-![INSERTAR IMAGEN 12 AQUÍ: Captura del navegador del anfitrión mostrando el sitio por el puerto 8080, si se configuró el reenvío.](Nav.png)
+![INSERTAR IMAGEN 12 AQUÍ: Captura del navegador del anfitrión mostrando el sitio por el puerto 8080, si se configuró el reenvío.](images/Nav.png)
 
 *Figura 12. Acceso al servidor web desde el equipo anfitrión.*
 
