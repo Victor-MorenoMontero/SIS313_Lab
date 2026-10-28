@@ -95,11 +95,11 @@ ip address
 ip route
 ```
 
-**[INSERTAR IMAGEN 2 AQUÍ: Captura de `ip address` en la VM DNS donde se vea la IP interna `192.168.10.2`.]**
+![Captura de `ip address` en la VM DNS donde se vea la IP interna `192.168.10.2`.](images/DNS_IP.png)
 
 *Figura 2. Verificación de la dirección IP del servidor DNS.*
 
-**[INSERTAR IMAGEN 3 AQUÍ: Captura de `ip address` en la VM Web y/o Client mostrando las IP asignadas.]**
+![Captura de `ip address` en la VM Web y/o Client mostrando las IP asignadas.](images/WEB_IP.png)
 
 *Figura 3. Direccionamiento de las máquinas Web y Client.*
 
